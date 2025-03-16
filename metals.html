@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Metal Rates</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="metals.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Live Gold, Silver, Platinum, Copper & Diamond Rates</h1>
+        <label for="countrySelect">Select Country:</label>
+        <select id="countrySelect">
+            <option value="USD">United States (USD)</option>
+            <option value="INR">India (INR)</option>
+            <option value="EUR">Europe (EUR)</option>
+            <option value="AUD">Australia (AUD)</option>
+            <option value="JPY">Japan (JPY)</option>
+        </select>
+        <button id="fetchRates">Get Rates</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Metal</th>
+                    <th>Price per Gram</th>
+                    <th>Price per 10g</th>
+                    <th>Price per Kg</th>
+                </tr>
+            </thead>
+            <tbody id="metalsTableBody">
+                <!-- Data will appear here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

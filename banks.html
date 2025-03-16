@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Bank Interest Rates</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Global Bank Interest Rates</h1>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Bank</th>
+                    <th>Country</th>
+                    <th>Interest Rate (%)</th>
+                </tr>
+            </thead>
+            <tbody id="bankRates"></tbody>
+        </table>
+        <canvas id="rateChart"></canvas>
+    </div>
+    <script>
+        const banks = [
+            { name: "State Bank of India", country: "India", rate: 3.5 },
+            { name: "HDFC Bank", country: "India", rate: 4.2 },
+            { name: "ICICI Bank", country: "India", rate: 3.8 },
+            { name: "JPMorgan Chase", country: "USA", rate: 5.1 },
+            { name: "Bank of America", country: "USA", rate: 4.9 },
+            { name: "Deutsche Bank", country: "Germany", rate: 3.7 },
+            { name: "HSBC", country: "UK", rate: 4.5 },
+            { name: "BNP Paribas", country: "France", rate: 3.9 }
+        ];
+        
+        const tableBody = document.getElementById("bankRates");
+        banks.forEach(bank => {
+            const row = `<tr><td>${bank.name}</td><td>${bank.country}</td><td>${bank.rate}%</td></tr>`;
+            tableBody.innerHTML += row;
+        });
+        
+        const ctx = document.getElementById('rateChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: banks.map(bank => bank.name),
+                datasets: [{
+                    label: 'Interest Rate (%)',
+                    data: banks.map(bank => bank.rate),
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
