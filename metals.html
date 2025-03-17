@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="metals.js"></script>
 </head>
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        pointer-events: none; /* Prevents interaction */
+    }
+</style>
 <body>
     <div class="container">
         <h1>Live Gold, Silver, Platinum, Copper & Diamond Rates</h1>
@@ -34,6 +45,5 @@
             </tbody>
         </table>
     </div>
-    <div class="watermark">© 2025 Your Website Name</div>
 </body>
 </html>
