@@ -51,3 +51,12 @@ th {
 td {
     background: #fdfdfd;
 }
+body::after {
+    content: "© 2025 Your Website Name"; /* Change to your website name */
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
