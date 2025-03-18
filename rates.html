@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        pointer-events: none; /* Prevents interaction */
+    }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Exchange Rates</title>
@@ -33,5 +44,6 @@
 
         <button id="darkModeToggle">🌙 Dark Mode</button>
     </div>
+    <div class="watermark">By Aditya Akella</div>
 </body>
 </html>
